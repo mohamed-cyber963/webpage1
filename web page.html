@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منتجنا | المميز</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #faf7f4;
+      color: #4a4a4a;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      text-align: center;
+      padding: 60px 0 30px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #6b8f71;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    header p {
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+    .product {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+      margin-bottom: 40px;
+    }
+    .product-image {
+      flex: 1;
+      text-align: center;
+    }
+    .product-image svg {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+    }
+    .product-info {
+      flex: 1;
+    }
+    .product-info h2 {
+      font-size: 1.8rem;
+      color: #5a7d6a;
+      margin-bottom: 15px;
+    }
+    .product-info p {
+      font-size: 1.05rem;
+      color: #6b6b6b;
+      margin-bottom: 25px;
+    }
+    .product-info .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #6b8f71;
+      margin-bottom: 25px;
+    }
+    .btn-order {
+      display: inline-block;
+      background: linear-gradient(135deg, #8fb996, #6b8f71);
+      color: #fff;
+      padding: 16px 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: 'Cairo', sans-serif;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(107, 143, 113, 0.35);
+      text-decoration: none;
+    }
+    .btn-order:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(107, 143, 113, 0.45);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 50px 0;
+    }
+    .feature-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+    .feature-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      color: #5a7d6a;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #888;
+    }
+    .order-section {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+      margin: 40px 0 60px;
+    }
+    .order-section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #5a7d6a;
+      margin-bottom: 35px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #5a5a5a;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 1rem;
+      font-family: 'Cairo', sans-serif;
+      border: 2px solid #e8e4e0;
+      border-radius: 12px;
+      background: #faf7f4;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #8fb996;
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b8f71' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 18px center;
+      padding-left: 40px;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #8fb996, #6b8f71);
+      color: #fff;
+      padding: 16px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: 'Cairo', sans-serif;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(107, 143, 113, 0.35);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(107, 143, 113, 0.45);
+    }
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #b0b0b0;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      .product { flex-direction: column; padding: 30px 20px; gap: 30px; }
+      .product-info h2 { font-size: 1.4rem; }
+      .features { grid-template-columns: 1fr; }
+      .order-section { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✦ منتجنا المميز ✦</h1>
+      <p>الجودة التي تستحقها</p>
+    </header>
+
+    <div class="product">
+      <div class="product-image">
+        <svg viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="70" y="30" width="160" height="200" rx="20" fill="#d4e8d8"/>
+          <rect x="60" y="40" width="180" height="180" rx="24" fill="#eaf4ec" stroke="#b8d4be" stroke-width="2"/>
+          <rect x="90" y="70" width="120" height="20" rx="10" fill="#c5ddcb"/>
+          <rect x="90" y="105" width="120" height="12" rx="6" fill="#dbeade"/>
+          <rect x="90" y="127" width="90" height="12" rx="6" fill="#dbeade"/>
+          <rect x="90" y="149" width="100" height="12" rx="6" fill="#dbeade"/>
+          <circle cx="150" cy="200" r="18" fill="#c5ddcb"/>
+          <circle cx="150" cy="200" r="8" fill="#8fb996"/>
+          <path d="M130 230h40l-8 18h-24l-8-18z" fill="#e8d1b5"/>
+        </svg>
+      </div>
+      <div class="product-info">
+        <h2>منتج عصري بتصميم أنيق</h2>
+        <p>صُمم ليمنحك تجربة استثنائية تجمع بين الأناقة والوظائف المتطورة. خفيف الوزن، متين، ومثالي لاستخداماتك اليومية.</p>
+        <div class="price">١٤٩ ر.س</div>
+        <a href="#order-form" class="btn-order">اطلب الآن</a>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🌿</div>
+        <h3>خامات طبيعية</h3>
+        <p>مصنوع من أجود المواد الصديقة للبيئة</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🚚</div>
+        <h3>توصيل سريع</h3>
+        <p>نوصل طلبك لباب البيت خلال ٣-٥ أيام</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💯</div>
+        <h3>ضمان الجودة</h3>
+        <p>استرجاع مجاني خلال ١٤ يوم</p>
+      </div>
+    </div>
+
+    <div class="order-section" id="order-form">
+      <h2>نموذج الطلب</h2>
+      <form>
+        <div class="form-group">
+          <label for="fullname">👤 الاسم الكامل</label>
+          <input type="text" id="fullname" placeholder="أدخل اسمك الكامل" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">📞 رقم الجوال</label>
+          <input type="tel" id="phone" placeholder="٠٥xxxxxxxx" required>
+        </div>
+        <div class="form-group">
+          <label for="address">📍 العنوان</label>
+          <textarea id="address" placeholder="المدينة، الحي، الشارع، رقم المبنى" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="product-type">🎁 نوع المنتج</label>
+          <select id="product-type" required>
+            <option value="">-- اختر المنتج --</option>
+            <option value="standard">النسخة القياسية - ١٤٩ ر.س</option>
+            <option value="premium">النسخة الممتازة - ١٩٩ ر.س</option>
+            <option value="deluxe">النسخة الفاخرة - ٢٤٩ ر.س</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">✔ تأكيد الطلب</button>
+      </form>
+    </div>
+
+    <footer>
+      © ٢٠٢٦ جميع الحقوق محفوظة
+    </footer>
+  </div>
+</body>
+</html>
